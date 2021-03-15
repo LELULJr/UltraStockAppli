@@ -76,9 +76,9 @@ namespace PPE
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.textBoxNom = new System.Windows.Forms.TextBox();
             this.textBoxID = new System.Windows.Forms.TextBox();
-            this.Del_Jeu = new System.Windows.Forms.Button();
-            this.Edit_Jeu = new System.Windows.Forms.Button();
-            this.Add_Jeu = new System.Windows.Forms.Button();
+            this.DelProduit = new System.Windows.Forms.Button();
+            this.EditProduit = new System.Windows.Forms.Button();
+            this.AddProduit = new System.Windows.Forms.Button();
             this.dataGridView_Jeux = new System.Windows.Forms.DataGridView();
             this.Categorie_Tab = new System.Windows.Forms.TabPage();
             this.label_id_categorie = new System.Windows.Forms.Label();
@@ -413,9 +413,9 @@ namespace PPE
             this.Produits.Controls.Add(this.textBoxDescription);
             this.Produits.Controls.Add(this.textBoxNom);
             this.Produits.Controls.Add(this.textBoxID);
-            this.Produits.Controls.Add(this.Del_Jeu);
-            this.Produits.Controls.Add(this.Edit_Jeu);
-            this.Produits.Controls.Add(this.Add_Jeu);
+            this.Produits.Controls.Add(this.DelProduit);
+            this.Produits.Controls.Add(this.EditProduit);
+            this.Produits.Controls.Add(this.AddProduit);
             this.Produits.Controls.Add(this.dataGridView_Jeux);
             this.Produits.Location = new System.Drawing.Point(4, 25);
             this.Produits.Name = "Produits";
@@ -599,35 +599,35 @@ namespace PPE
             this.textBoxID.TabIndex = 4;
             this.textBoxID.TextChanged += new System.EventHandler(this.enable_Button);
             // 
-            // Del_Jeu
+            // DelProduit
             // 
-            this.Del_Jeu.Location = new System.Drawing.Point(677, 774);
-            this.Del_Jeu.Name = "Del_Jeu";
-            this.Del_Jeu.Size = new System.Drawing.Size(100, 30);
-            this.Del_Jeu.TabIndex = 3;
-            this.Del_Jeu.Text = "Supprimer";
-            this.Del_Jeu.UseVisualStyleBackColor = true;
-            this.Del_Jeu.Click += new System.EventHandler(this.Del_Jeu_Click);
+            this.DelProduit.Location = new System.Drawing.Point(677, 774);
+            this.DelProduit.Name = "DelProduit";
+            this.DelProduit.Size = new System.Drawing.Size(100, 30);
+            this.DelProduit.TabIndex = 3;
+            this.DelProduit.Text = "Supprimer";
+            this.DelProduit.UseVisualStyleBackColor = true;
+            this.DelProduit.Click += new System.EventHandler(this.DelProduit_Click);
             // 
-            // Edit_Jeu
+            // EditProduit
             // 
-            this.Edit_Jeu.Location = new System.Drawing.Point(328, 774);
-            this.Edit_Jeu.Name = "Edit_Jeu";
-            this.Edit_Jeu.Size = new System.Drawing.Size(100, 30);
-            this.Edit_Jeu.TabIndex = 2;
-            this.Edit_Jeu.Text = "Modifier";
-            this.Edit_Jeu.UseVisualStyleBackColor = true;
-            this.Edit_Jeu.Click += new System.EventHandler(this.Edit_Jeu_Click);
+            this.EditProduit.Location = new System.Drawing.Point(328, 774);
+            this.EditProduit.Name = "EditProduit";
+            this.EditProduit.Size = new System.Drawing.Size(100, 30);
+            this.EditProduit.TabIndex = 2;
+            this.EditProduit.Text = "Modifier";
+            this.EditProduit.UseVisualStyleBackColor = true;
+            this.EditProduit.Click += new System.EventHandler(this.EditProduit_Click);
             // 
-            // Add_Jeu
+            // AddProduit
             // 
-            this.Add_Jeu.Location = new System.Drawing.Point(15, 774);
-            this.Add_Jeu.Name = "Add_Jeu";
-            this.Add_Jeu.Size = new System.Drawing.Size(100, 30);
-            this.Add_Jeu.TabIndex = 1;
-            this.Add_Jeu.Text = "Ajouter";
-            this.Add_Jeu.UseVisualStyleBackColor = true;
-            this.Add_Jeu.Click += new System.EventHandler(this.Add_Jeu_Click);
+            this.AddProduit.Location = new System.Drawing.Point(15, 774);
+            this.AddProduit.Name = "AddProduit";
+            this.AddProduit.Size = new System.Drawing.Size(100, 30);
+            this.AddProduit.TabIndex = 1;
+            this.AddProduit.Text = "Ajouter";
+            this.AddProduit.UseVisualStyleBackColor = true;
+            this.AddProduit.Click += new System.EventHandler(this.AddProduit_Click);
             // 
             // dataGridView_Jeux
             // 
@@ -914,9 +914,9 @@ namespace PPE
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.TextBox textBoxNom;
         private System.Windows.Forms.TextBox textBoxID;
-        private System.Windows.Forms.Button Del_Jeu;
-        private System.Windows.Forms.Button Edit_Jeu;
-        private System.Windows.Forms.Button Add_Jeu;
+        private System.Windows.Forms.Button DelProduit;
+        private System.Windows.Forms.Button EditProduit;
+        private System.Windows.Forms.Button AddProduit;
         private System.Windows.Forms.DataGridView dataGridView_Jeux;
         private System.Windows.Forms.TabPage Categorie_Tab;
         private System.Windows.Forms.Label label_id_categorie;

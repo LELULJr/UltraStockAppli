@@ -102,24 +102,24 @@ namespace PPE
             //Jeux TAB
             if (textBoxID.TextLength != 0)
             {
-                Add_Jeu.Enabled = false;
-                Edit_Jeu.Enabled = true;
-                Del_Jeu.Enabled = true;
+                AddProduit.Enabled = false;
+                EditProduit.Enabled = true;
+                DelProduit.Enabled = true;
                 Comment_Jeu.Enabled = true;
             }
             else
             {
-                Add_Jeu.Enabled = true;
-                Edit_Jeu.Enabled = false;
-                Del_Jeu.Enabled = false;
+                AddProduit.Enabled = true;
+                EditProduit.Enabled = false;
+                DelProduit.Enabled = false;
                 Comment_Jeu.Enabled = false;
             }
 
             if (textBoxNom.TextLength == 0 || textBoxDescription.TextLength == 0 || textBoxImage.TextLength == 0)
             {
-                Add_Jeu.Enabled = false;
-                Edit_Jeu.Enabled = false;
-                Del_Jeu.Enabled = false;
+                AddProduit.Enabled = false;
+                EditProduit.Enabled = false;
+                DelProduit.Enabled = false;
             }
 
             //User TAB
@@ -350,9 +350,9 @@ namespace PPE
 
             conn.Close();
 
-            Add_Jeu.Enabled = false;
-            Edit_Jeu.Enabled = false;
-            Del_Jeu.Enabled = false;
+            AddProduit.Enabled = false;
+            EditProduit.Enabled = false;
+            DelProduit.Enabled = false;
             Comment_Jeu.Enabled = false;
         }
 
@@ -463,17 +463,34 @@ namespace PPE
             conn.Close();
         }
 
-        private void Add_Jeu_Click(object sender, EventArgs e)
+        private void AddProduit_Click(object sender, EventArgs e)
         {
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
+
+            
+            command.Parameters.AddWithValue("@id_marque", checkedListBoxMarque.CheckedItems);
             command.Parameters.AddWithValue("@nom", textBoxNom.Text);
             command.Parameters.AddWithValue("@description", textBoxDescription.Text);
             command.Parameters.AddWithValue("@prix", textBoxPrix.Text);
             command.Parameters.AddWithValue("@quantite", textBoxQuantite.Text);
             command.Parameters.AddWithValue("@image", textBoxImage.Text);
 
-            command.CommandText = "INSERT INTO produits (id_type, id_marque, nom, description, prix, quantite, image) VALUES (1, 1, @nom, @description, @prix, @quantite, @image) ";
+            foreach (object itemChecked in checkedListBoxType.CheckedItems)
+            {
+
+                DataRowView castedItem = itemChecked as DataRowView;
+                command.Parameters.AddWithValue("@type", castedItem["nom"].ToString());
+            }
+
+            foreach (object itemChecked in checkedListBoxMarque.CheckedItems)
+            {
+
+                DataRowView castedItem = itemChecked as DataRowView;
+                command.Parameters.AddWithValue("@marque", castedItem["nom"].ToString());
+            }
+
+            command.CommandText = "INSERT INTO produits (id_type, id_marque, nom, description, prix, quantite, image) VALUES ((SELECT id FROM type WHERE nom = @type), (SELECT id FROM marque WHERE nom = @marque), @nom, @description, @prix, @quantite, @image) ";
 
             if (command.ExecuteNonQuery() > 0)
             {
@@ -503,19 +520,35 @@ namespace PPE
             conn.Close();
         }
 
-        private void Edit_Jeu_Click(object sender, EventArgs e)
+        private void EditProduit_Click(object sender, EventArgs e)
         {
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
-            command.Parameters.AddWithValue("@name", textBoxNom.Text);
+            command.Parameters.AddWithValue("@id_marque", checkedListBoxMarque.CheckedItems);
+            command.Parameters.AddWithValue("@nom", textBoxNom.Text);
             command.Parameters.AddWithValue("@description", textBoxDescription.Text);
-           
-            command.Parameters.AddWithValue("@images", textBoxImage.Text);
+            command.Parameters.AddWithValue("@prix", textBoxPrix.Text);
+            command.Parameters.AddWithValue("@quantite", textBoxQuantite.Text);
+            command.Parameters.AddWithValue("@image", textBoxImage.Text);
             command.Parameters.AddWithValue("@id", textBoxID.Text);
 
-            command.CommandText = "DELETE FROM categoriser WHERE id_jeux = @id";
+            foreach (object itemChecked in checkedListBoxType.CheckedItems)
+            {
+
+                DataRowView castedItem = itemChecked as DataRowView;
+                command.Parameters.AddWithValue("@type", castedItem["nom"].ToString());
+            }
+
+            foreach (object itemChecked in checkedListBoxMarque.CheckedItems)
+            {
+
+                DataRowView castedItem = itemChecked as DataRowView;
+                command.Parameters.AddWithValue("@marque", castedItem["nom"].ToString());
+            }
+
+            command.CommandText = "DELETE FROM categoriser WHERE id_produit = @id";
             command.ExecuteNonQuery();
-            command.CommandText = "UPDATE jeux SET name = @name , description = @description , site = @site , images = @images WHERE id = @id";
+            command.CommandText = "UPDATE produits SET id_type = (SELECT id FROM type WHERE nom = @type), id_marque = (SELECT id FROM marque WHERE nom = @marque), nom = @nom , description = @description , prix = @prix , quantite = @quantite,  image = @image WHERE id = @id";
             
 
             if (command.ExecuteNonQuery() > 0)
@@ -527,9 +560,9 @@ namespace PPE
                 {
                     MySqlCommand command3 = conn.CreateCommand();
                     DataRowView castedItem = itemChecked as DataRowView;
-                    command3.Parameters.AddWithValue("@name_cat", castedItem["name"].ToString());
-                    command3.CommandText = "INSERT INTO categoriser (id_jeux, id_categories) " +
-                        "VALUES ((SELECT MAX(id) FROM jeux), (SELECT id FROM categories WHERE categories.name = @name_cat)) ";
+                    command3.Parameters.AddWithValue("@name_cat", castedItem["nom"].ToString());
+                    command3.CommandText = "INSERT INTO categoriser (id_produit, id_cat) " +
+                        "VALUES ((SELECT MAX(id) FROM produits), (SELECT id FROM categorie WHERE categorie.nom = @name_cat)) ";
                     command3.ExecuteNonQuery();
 
                 }
@@ -546,17 +579,22 @@ namespace PPE
             conn.Close();
         }
 
-        private void Del_Jeu_Click(object sender, EventArgs e)
+        private void DelProduit_Click(object sender, EventArgs e)
         {
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@id", textBoxID.Text);
 
-            command.CommandText = "DELETE FROM jeux WHERE id = @id";
-            command.ExecuteNonQuery();
-            command.CommandText = "DELETE FROM categoriser WHERE id_jeux = @id";
-            command.ExecuteNonQuery();
-
+            command.CommandText = "DELETE FROM produits WHERE id = @id";
+            if (command.ExecuteNonQuery() > 0)
+            {
+      
+            }
+            else
+            {
+                MessageBox.Show("Erreur lors de la suppression!");
+            }
+            command.CommandText = "DELETE FROM categoriser WHERE id_produit = @id";
             if (command.ExecuteNonQuery() > 0)
             {
                 MessageBox.Show("Suppression effectuée!");
@@ -565,6 +603,8 @@ namespace PPE
             {
                 MessageBox.Show("Erreur lors de la suppression!");
             }
+
+
 
             conn.Close();
 
