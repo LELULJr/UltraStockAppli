@@ -32,38 +32,31 @@ namespace PPE
             this.Utilisateur_Tab = new System.Windows.Forms.TabPage();
             this.comboBox_Role_user = new System.Windows.Forms.ComboBox();
             this.label_role_user = new System.Windows.Forms.Label();
-            this.label_pays_user = new System.Windows.Forms.Label();
-            this.textBox_Pays_user = new System.Windows.Forms.TextBox();
             this.textBox_Adresse_user = new System.Windows.Forms.TextBox();
-            this.textBox_Anniv_user = new System.Windows.Forms.TextBox();
-            this.textBox_Numero_user = new System.Windows.Forms.TextBox();
             this.textBox_Nom_user = new System.Windows.Forms.TextBox();
             this.textBox_Prenom_user = new System.Windows.Forms.TextBox();
             this.textBox_Email_user = new System.Windows.Forms.TextBox();
-            this.textBox_Username_user = new System.Windows.Forms.TextBox();
             this.textBox_ID_user = new System.Windows.Forms.TextBox();
             this.label_adresse_user = new System.Windows.Forms.Label();
             this.Edit_User = new System.Windows.Forms.Button();
             this.Reset_User = new System.Windows.Forms.Button();
-            this.label_birthday_user = new System.Windows.Forms.Label();
-            this.label_numero_user = new System.Windows.Forms.Label();
             this.label_nom_user = new System.Windows.Forms.Label();
             this.label_prenom_user = new System.Windows.Forms.Label();
             this.label_email_user = new System.Windows.Forms.Label();
-            this.label_Name_user = new System.Windows.Forms.Label();
             this.label_id_user = new System.Windows.Forms.Label();
             this.dataGridView_Users = new System.Windows.Forms.DataGridView();
-            this.Topic_Tab = new System.Windows.Forms.TabPage();
-            this.Comment_Topic = new System.Windows.Forms.Button();
-            this.Evenement_Tab = new System.Windows.Forms.TabPage();
             this.Produits = new System.Windows.Forms.TabPage();
             this.checkedListBoxType = new System.Windows.Forms.CheckedListBox();
             this.checkedListBoxMarque = new System.Windows.Forms.CheckedListBox();
             this.labelPrix = new System.Windows.Forms.Label();
             this.textBoxPrix = new System.Windows.Forms.TextBox();
+            this.textBoxQuantite = new System.Windows.Forms.TextBox();
+            this.textBoxImage = new System.Windows.Forms.TextBox();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.textBoxNom = new System.Windows.Forms.TextBox();
+            this.textBoxID = new System.Windows.Forms.TextBox();
             this.labelType = new System.Windows.Forms.Label();
             this.labelQuantite = new System.Windows.Forms.Label();
-            this.textBoxQuantite = new System.Windows.Forms.TextBox();
             this.Comment_Jeu = new System.Windows.Forms.Button();
             this.listBoxAllCategories = new System.Windows.Forms.CheckedListBox();
             this.labelCategories = new System.Windows.Forms.Label();
@@ -72,18 +65,14 @@ namespace PPE
             this.labelDescription = new System.Windows.Forms.Label();
             this.labelNom = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
-            this.textBoxImage = new System.Windows.Forms.TextBox();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
-            this.textBoxNom = new System.Windows.Forms.TextBox();
-            this.textBoxID = new System.Windows.Forms.TextBox();
             this.DelProduit = new System.Windows.Forms.Button();
             this.EditProduit = new System.Windows.Forms.Button();
             this.AddProduit = new System.Windows.Forms.Button();
-            this.dataGridView_Jeux = new System.Windows.Forms.DataGridView();
+            this.dataGridView_Produits = new System.Windows.Forms.DataGridView();
             this.Categorie_Tab = new System.Windows.Forms.TabPage();
             this.label_id_categorie = new System.Windows.Forms.Label();
-            this.dataGridView_Jeux2 = new System.Windows.Forms.DataGridView();
-            this.label_jeux_de_la_cat = new System.Windows.Forms.Label();
+            this.dataGridView_Produits2 = new System.Windows.Forms.DataGridView();
+            this.label_Produits_de_la_cat = new System.Windows.Forms.Label();
             this.label_nom_categorie = new System.Windows.Forms.Label();
             this.textBox_Name_categorie = new System.Windows.Forms.TextBox();
             this.textBox_ID_categorie = new System.Windows.Forms.TextBox();
@@ -94,18 +83,23 @@ namespace PPE
             this.Menu = new System.Windows.Forms.TabPage();
             this.Categorie_Btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.Jeux_Btn = new System.Windows.Forms.Button();
-            this.Evenement_Btn = new System.Windows.Forms.Button();
-            this.Topic_Btn = new System.Windows.Forms.Button();
+            this.Produits_Btn = new System.Windows.Forms.Button();
             this.Utilisateur_Btn = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.label_Name_user = new System.Windows.Forms.Label();
+            this.textBox_Username_user = new System.Windows.Forms.TextBox();
+            this.label_numero_user = new System.Windows.Forms.Label();
+            this.textBox_Numero_user = new System.Windows.Forms.TextBox();
+            this.label_birthday_user = new System.Windows.Forms.Label();
+            this.label_pays_user = new System.Windows.Forms.Label();
+            this.textBox_Pays_user = new System.Windows.Forms.TextBox();
+            this.textBox_Anniv_user = new System.Windows.Forms.TextBox();
             this.Utilisateur_Tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Users)).BeginInit();
-            this.Topic_Tab.SuspendLayout();
             this.Produits.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Jeux)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Produits)).BeginInit();
             this.Categorie_Tab.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Jeux2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Produits2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Categorie)).BeginInit();
             this.Menu.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -169,44 +163,12 @@ namespace PPE
             this.label_role_user.Text = "Rôle* :";
             this.label_role_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label_pays_user
-            // 
-            this.label_pays_user.AllowDrop = true;
-            this.label_pays_user.AutoSize = true;
-            this.label_pays_user.Location = new System.Drawing.Point(454, 716);
-            this.label_pays_user.Name = "label_pays_user";
-            this.label_pays_user.Size = new System.Drawing.Size(47, 17);
-            this.label_pays_user.TabIndex = 33;
-            this.label_pays_user.Text = "Pays :";
-            this.label_pays_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBox_Pays_user
-            // 
-            this.textBox_Pays_user.Location = new System.Drawing.Point(507, 713);
-            this.textBox_Pays_user.Name = "textBox_Pays_user";
-            this.textBox_Pays_user.Size = new System.Drawing.Size(159, 22);
-            this.textBox_Pays_user.TabIndex = 32;
-            // 
             // textBox_Adresse_user
             // 
             this.textBox_Adresse_user.Location = new System.Drawing.Point(410, 674);
             this.textBox_Adresse_user.Name = "textBox_Adresse_user";
             this.textBox_Adresse_user.Size = new System.Drawing.Size(368, 22);
             this.textBox_Adresse_user.TabIndex = 29;
-            // 
-            // textBox_Anniv_user
-            // 
-            this.textBox_Anniv_user.Location = new System.Drawing.Point(121, 674);
-            this.textBox_Anniv_user.Name = "textBox_Anniv_user";
-            this.textBox_Anniv_user.Size = new System.Drawing.Size(159, 22);
-            this.textBox_Anniv_user.TabIndex = 23;
-            // 
-            // textBox_Numero_user
-            // 
-            this.textBox_Numero_user.Location = new System.Drawing.Point(382, 634);
-            this.textBox_Numero_user.Name = "textBox_Numero_user";
-            this.textBox_Numero_user.Size = new System.Drawing.Size(117, 22);
-            this.textBox_Numero_user.TabIndex = 21;
             // 
             // textBox_Nom_user
             // 
@@ -229,14 +191,6 @@ namespace PPE
             this.textBox_Email_user.Size = new System.Drawing.Size(200, 22);
             this.textBox_Email_user.TabIndex = 15;
             this.textBox_Email_user.TextChanged += new System.EventHandler(this.enable_Button);
-            // 
-            // textBox_Username_user
-            // 
-            this.textBox_Username_user.Location = new System.Drawing.Point(299, 594);
-            this.textBox_Username_user.Name = "textBox_Username_user";
-            this.textBox_Username_user.Size = new System.Drawing.Size(200, 22);
-            this.textBox_Username_user.TabIndex = 12;
-            this.textBox_Username_user.TextChanged += new System.EventHandler(this.enable_Button);
             // 
             // textBox_ID_user
             // 
@@ -277,28 +231,6 @@ namespace PPE
             this.Reset_User.UseVisualStyleBackColor = true;
             this.Reset_User.Click += new System.EventHandler(this.Reset_User_Click);
             // 
-            // label_birthday_user
-            // 
-            this.label_birthday_user.AllowDrop = true;
-            this.label_birthday_user.AutoSize = true;
-            this.label_birthday_user.Location = new System.Drawing.Point(20, 677);
-            this.label_birthday_user.Name = "label_birthday_user";
-            this.label_birthday_user.Size = new System.Drawing.Size(95, 17);
-            this.label_birthday_user.TabIndex = 24;
-            this.label_birthday_user.Text = "Anniversaire :";
-            this.label_birthday_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label_numero_user
-            // 
-            this.label_numero_user.AllowDrop = true;
-            this.label_numero_user.AutoSize = true;
-            this.label_numero_user.Location = new System.Drawing.Point(310, 637);
-            this.label_numero_user.Name = "label_numero_user";
-            this.label_numero_user.Size = new System.Drawing.Size(66, 17);
-            this.label_numero_user.TabIndex = 22;
-            this.label_numero_user.Text = "Numéro :";
-            this.label_numero_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // label_nom_user
             // 
             this.label_nom_user.AllowDrop = true;
@@ -330,16 +262,6 @@ namespace PPE
             this.label_email_user.Text = "Email* :";
             this.label_email_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label_Name_user
-            // 
-            this.label_Name_user.AutoSize = true;
-            this.label_Name_user.Location = new System.Drawing.Point(207, 597);
-            this.label_Name_user.Name = "label_Name_user";
-            this.label_Name_user.Size = new System.Drawing.Size(86, 17);
-            this.label_Name_user.TabIndex = 14;
-            this.label_Name_user.Text = "Username* :";
-            this.label_Name_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // label_id_user
             // 
             this.label_id_user.AutoSize = true;
@@ -361,46 +283,19 @@ namespace PPE
             this.dataGridView_Users.TabIndex = 1;
             this.dataGridView_Users.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Users_MouseUp);
             // 
-            // Topic_Tab
-            // 
-            this.Topic_Tab.Controls.Add(this.Comment_Topic);
-            this.Topic_Tab.Location = new System.Drawing.Point(4, 25);
-            this.Topic_Tab.Name = "Topic_Tab";
-            this.Topic_Tab.Padding = new System.Windows.Forms.Padding(3);
-            this.Topic_Tab.Size = new System.Drawing.Size(796, 823);
-            this.Topic_Tab.TabIndex = 5;
-            this.Topic_Tab.Text = "Topics";
-            this.Topic_Tab.UseVisualStyleBackColor = true;
-            // 
-            // Comment_Topic
-            // 
-            this.Comment_Topic.Location = new System.Drawing.Point(622, 594);
-            this.Comment_Topic.Name = "Comment_Topic";
-            this.Comment_Topic.Size = new System.Drawing.Size(120, 60);
-            this.Comment_Topic.TabIndex = 23;
-            this.Comment_Topic.Text = "Gerer les commentaires";
-            this.Comment_Topic.UseVisualStyleBackColor = true;
-            this.Comment_Topic.Click += new System.EventHandler(this.Commentaires_Admin);
-            // 
-            // Evenement_Tab
-            // 
-            this.Evenement_Tab.Location = new System.Drawing.Point(4, 25);
-            this.Evenement_Tab.Name = "Evenement_Tab";
-            this.Evenement_Tab.Padding = new System.Windows.Forms.Padding(3);
-            this.Evenement_Tab.Size = new System.Drawing.Size(796, 823);
-            this.Evenement_Tab.TabIndex = 3;
-            this.Evenement_Tab.Text = "Events";
-            this.Evenement_Tab.UseVisualStyleBackColor = true;
-            // 
             // Produits
             // 
             this.Produits.Controls.Add(this.checkedListBoxType);
             this.Produits.Controls.Add(this.checkedListBoxMarque);
             this.Produits.Controls.Add(this.labelPrix);
             this.Produits.Controls.Add(this.textBoxPrix);
+            this.Produits.Controls.Add(this.textBoxQuantite);
+            this.Produits.Controls.Add(this.textBoxImage);
+            this.Produits.Controls.Add(this.textBoxDescription);
+            this.Produits.Controls.Add(this.textBoxNom);
+            this.Produits.Controls.Add(this.textBoxID);
             this.Produits.Controls.Add(this.labelType);
             this.Produits.Controls.Add(this.labelQuantite);
-            this.Produits.Controls.Add(this.textBoxQuantite);
             this.Produits.Controls.Add(this.Comment_Jeu);
             this.Produits.Controls.Add(this.listBoxAllCategories);
             this.Produits.Controls.Add(this.labelCategories);
@@ -409,14 +304,10 @@ namespace PPE
             this.Produits.Controls.Add(this.labelDescription);
             this.Produits.Controls.Add(this.labelNom);
             this.Produits.Controls.Add(this.labelID);
-            this.Produits.Controls.Add(this.textBoxImage);
-            this.Produits.Controls.Add(this.textBoxDescription);
-            this.Produits.Controls.Add(this.textBoxNom);
-            this.Produits.Controls.Add(this.textBoxID);
             this.Produits.Controls.Add(this.DelProduit);
             this.Produits.Controls.Add(this.EditProduit);
             this.Produits.Controls.Add(this.AddProduit);
-            this.Produits.Controls.Add(this.dataGridView_Jeux);
+            this.Produits.Controls.Add(this.dataGridView_Produits);
             this.Produits.Location = new System.Drawing.Point(4, 25);
             this.Produits.Name = "Produits";
             this.Produits.Padding = new System.Windows.Forms.Padding(3);
@@ -460,6 +351,47 @@ namespace PPE
             this.textBoxPrix.Size = new System.Drawing.Size(200, 22);
             this.textBoxPrix.TabIndex = 27;
             // 
+            // textBoxQuantite
+            // 
+            this.textBoxQuantite.Location = new System.Drawing.Point(571, 378);
+            this.textBoxQuantite.Name = "textBoxQuantite";
+            this.textBoxQuantite.Size = new System.Drawing.Size(200, 22);
+            this.textBoxQuantite.TabIndex = 23;
+            // 
+            // textBoxImage
+            // 
+            this.textBoxImage.Location = new System.Drawing.Point(571, 473);
+            this.textBoxImage.Name = "textBoxImage";
+            this.textBoxImage.Size = new System.Drawing.Size(200, 22);
+            this.textBoxImage.TabIndex = 8;
+            this.textBoxImage.TextChanged += new System.EventHandler(this.enable_Button);
+            // 
+            // textBoxDescription
+            // 
+            this.textBoxDescription.Location = new System.Drawing.Point(105, 420);
+            this.textBoxDescription.Multiline = true;
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxDescription.Size = new System.Drawing.Size(388, 77);
+            this.textBoxDescription.TabIndex = 6;
+            this.textBoxDescription.TextChanged += new System.EventHandler(this.enable_Button);
+            // 
+            // textBoxNom
+            // 
+            this.textBoxNom.Location = new System.Drawing.Point(224, 381);
+            this.textBoxNom.Name = "textBoxNom";
+            this.textBoxNom.Size = new System.Drawing.Size(200, 22);
+            this.textBoxNom.TabIndex = 5;
+            this.textBoxNom.TextChanged += new System.EventHandler(this.enable_Button);
+            // 
+            // textBoxID
+            // 
+            this.textBoxID.Location = new System.Drawing.Point(48, 378);
+            this.textBoxID.Name = "textBoxID";
+            this.textBoxID.Size = new System.Drawing.Size(100, 22);
+            this.textBoxID.TabIndex = 4;
+            this.textBoxID.TextChanged += new System.EventHandler(this.enable_Button);
+            // 
             // labelType
             // 
             this.labelType.AutoSize = true;
@@ -479,13 +411,6 @@ namespace PPE
             this.labelQuantite.TabIndex = 24;
             this.labelQuantite.Text = "Quantite* :";
             this.labelQuantite.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBoxQuantite
-            // 
-            this.textBoxQuantite.Location = new System.Drawing.Point(571, 378);
-            this.textBoxQuantite.Name = "textBoxQuantite";
-            this.textBoxQuantite.Size = new System.Drawing.Size(200, 22);
-            this.textBoxQuantite.TabIndex = 23;
             // 
             // Comment_Jeu
             // 
@@ -565,40 +490,6 @@ namespace PPE
             this.labelID.Text = "ID :";
             this.labelID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBoxImage
-            // 
-            this.textBoxImage.Location = new System.Drawing.Point(571, 473);
-            this.textBoxImage.Name = "textBoxImage";
-            this.textBoxImage.Size = new System.Drawing.Size(200, 22);
-            this.textBoxImage.TabIndex = 8;
-            this.textBoxImage.TextChanged += new System.EventHandler(this.enable_Button);
-            // 
-            // textBoxDescription
-            // 
-            this.textBoxDescription.Location = new System.Drawing.Point(105, 420);
-            this.textBoxDescription.Multiline = true;
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxDescription.Size = new System.Drawing.Size(388, 77);
-            this.textBoxDescription.TabIndex = 6;
-            this.textBoxDescription.TextChanged += new System.EventHandler(this.enable_Button);
-            // 
-            // textBoxNom
-            // 
-            this.textBoxNom.Location = new System.Drawing.Point(224, 381);
-            this.textBoxNom.Name = "textBoxNom";
-            this.textBoxNom.Size = new System.Drawing.Size(200, 22);
-            this.textBoxNom.TabIndex = 5;
-            this.textBoxNom.TextChanged += new System.EventHandler(this.enable_Button);
-            // 
-            // textBoxID
-            // 
-            this.textBoxID.Location = new System.Drawing.Point(48, 378);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(100, 22);
-            this.textBoxID.TabIndex = 4;
-            this.textBoxID.TextChanged += new System.EventHandler(this.enable_Button);
-            // 
             // DelProduit
             // 
             this.DelProduit.Location = new System.Drawing.Point(677, 774);
@@ -629,22 +520,22 @@ namespace PPE
             this.AddProduit.UseVisualStyleBackColor = true;
             this.AddProduit.Click += new System.EventHandler(this.AddProduit_Click);
             // 
-            // dataGridView_Jeux
+            // dataGridView_Produits
             // 
-            this.dataGridView_Jeux.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Jeux.Location = new System.Drawing.Point(15, 15);
-            this.dataGridView_Jeux.Name = "dataGridView_Jeux";
-            this.dataGridView_Jeux.RowHeadersWidth = 51;
-            this.dataGridView_Jeux.RowTemplate.Height = 24;
-            this.dataGridView_Jeux.Size = new System.Drawing.Size(762, 339);
-            this.dataGridView_Jeux.TabIndex = 0;
-            this.dataGridView_Jeux.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Jeux_MouseUp);
+            this.dataGridView_Produits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Produits.Location = new System.Drawing.Point(15, 15);
+            this.dataGridView_Produits.Name = "dataGridView_Produits";
+            this.dataGridView_Produits.RowHeadersWidth = 51;
+            this.dataGridView_Produits.RowTemplate.Height = 24;
+            this.dataGridView_Produits.Size = new System.Drawing.Size(762, 339);
+            this.dataGridView_Produits.TabIndex = 0;
+            this.dataGridView_Produits.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView_Produits_MouseUp);
             // 
             // Categorie_Tab
             // 
             this.Categorie_Tab.Controls.Add(this.label_id_categorie);
-            this.Categorie_Tab.Controls.Add(this.dataGridView_Jeux2);
-            this.Categorie_Tab.Controls.Add(this.label_jeux_de_la_cat);
+            this.Categorie_Tab.Controls.Add(this.dataGridView_Produits2);
+            this.Categorie_Tab.Controls.Add(this.label_Produits_de_la_cat);
             this.Categorie_Tab.Controls.Add(this.label_nom_categorie);
             this.Categorie_Tab.Controls.Add(this.textBox_Name_categorie);
             this.Categorie_Tab.Controls.Add(this.textBox_ID_categorie);
@@ -670,24 +561,24 @@ namespace PPE
             this.label_id_categorie.Text = "ID :";
             this.label_id_categorie.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // dataGridView_Jeux2
+            // dataGridView_Produits2
             // 
-            this.dataGridView_Jeux2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Jeux2.Location = new System.Drawing.Point(19, 500);
-            this.dataGridView_Jeux2.Name = "dataGridView_Jeux2";
-            this.dataGridView_Jeux2.RowHeadersWidth = 51;
-            this.dataGridView_Jeux2.RowTemplate.Height = 24;
-            this.dataGridView_Jeux2.Size = new System.Drawing.Size(762, 251);
-            this.dataGridView_Jeux2.TabIndex = 36;
+            this.dataGridView_Produits2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Produits2.Location = new System.Drawing.Point(19, 500);
+            this.dataGridView_Produits2.Name = "dataGridView_Produits2";
+            this.dataGridView_Produits2.RowHeadersWidth = 51;
+            this.dataGridView_Produits2.RowTemplate.Height = 24;
+            this.dataGridView_Produits2.Size = new System.Drawing.Size(762, 251);
+            this.dataGridView_Produits2.TabIndex = 36;
             // 
-            // label_jeux_de_la_cat
+            // label_Produits_de_la_cat
             // 
-            this.label_jeux_de_la_cat.AutoSize = true;
-            this.label_jeux_de_la_cat.Location = new System.Drawing.Point(329, 462);
-            this.label_jeux_de_la_cat.Name = "label_jeux_de_la_cat";
-            this.label_jeux_de_la_cat.Size = new System.Drawing.Size(135, 17);
-            this.label_jeux_de_la_cat.TabIndex = 35;
-            this.label_jeux_de_la_cat.Text = "Jeux de la catégorie";
+            this.label_Produits_de_la_cat.AutoSize = true;
+            this.label_Produits_de_la_cat.Location = new System.Drawing.Point(329, 462);
+            this.label_Produits_de_la_cat.Name = "label_Produits_de_la_cat";
+            this.label_Produits_de_la_cat.Size = new System.Drawing.Size(158, 17);
+            this.label_Produits_de_la_cat.TabIndex = 35;
+            this.label_Produits_de_la_cat.Text = "Produits de la catégorie";
             // 
             // label_nom_categorie
             // 
@@ -705,7 +596,7 @@ namespace PPE
             this.textBox_Name_categorie.Name = "textBox_Name_categorie";
             this.textBox_Name_categorie.Size = new System.Drawing.Size(200, 22);
             this.textBox_Name_categorie.TabIndex = 27;
-            this.textBox_Name_categorie.TextChanged += new System.EventHandler(this.display_Jeu_from_Categorie);
+            this.textBox_Name_categorie.TextChanged += new System.EventHandler(this.display_Produits_from_Categorie);
             // 
             // textBox_ID_categorie
             // 
@@ -760,9 +651,7 @@ namespace PPE
             // 
             this.Menu.Controls.Add(this.Categorie_Btn);
             this.Menu.Controls.Add(this.label1);
-            this.Menu.Controls.Add(this.Jeux_Btn);
-            this.Menu.Controls.Add(this.Evenement_Btn);
-            this.Menu.Controls.Add(this.Topic_Btn);
+            this.Menu.Controls.Add(this.Produits_Btn);
             this.Menu.Controls.Add(this.Utilisateur_Btn);
             this.Menu.Location = new System.Drawing.Point(4, 25);
             this.Menu.Name = "Menu";
@@ -774,7 +663,7 @@ namespace PPE
             // 
             // Categorie_Btn
             // 
-            this.Categorie_Btn.Location = new System.Drawing.Point(8, 241);
+            this.Categorie_Btn.Location = new System.Drawing.Point(8, 422);
             this.Categorie_Btn.Name = "Categorie_Btn";
             this.Categorie_Btn.Size = new System.Drawing.Size(256, 130);
             this.Categorie_Btn.TabIndex = 0;
@@ -786,45 +675,25 @@ namespace PPE
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label1.Location = new System.Drawing.Point(146, 88);
+            this.label1.Location = new System.Drawing.Point(180, 279);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(412, 29);
             this.label1.TabIndex = 7;
             this.label1.Text = "Outil d\'administration de Ultra stock";
             // 
-            // Jeux_Btn
+            // Produits_Btn
             // 
-            this.Jeux_Btn.Location = new System.Drawing.Point(270, 241);
-            this.Jeux_Btn.Name = "Jeux_Btn";
-            this.Jeux_Btn.Size = new System.Drawing.Size(256, 130);
-            this.Jeux_Btn.TabIndex = 2;
-            this.Jeux_Btn.Text = "Jeux";
-            this.Jeux_Btn.UseVisualStyleBackColor = true;
-            this.Jeux_Btn.Click += new System.EventHandler(this.Jeux_Click);
-            // 
-            // Evenement_Btn
-            // 
-            this.Evenement_Btn.Location = new System.Drawing.Point(532, 241);
-            this.Evenement_Btn.Name = "Evenement_Btn";
-            this.Evenement_Btn.Size = new System.Drawing.Size(256, 130);
-            this.Evenement_Btn.TabIndex = 6;
-            this.Evenement_Btn.Text = "Evenement";
-            this.Evenement_Btn.UseVisualStyleBackColor = true;
-            this.Evenement_Btn.Click += new System.EventHandler(this.Evenement_Click);
-            // 
-            // Topic_Btn
-            // 
-            this.Topic_Btn.Location = new System.Drawing.Point(133, 377);
-            this.Topic_Btn.Name = "Topic_Btn";
-            this.Topic_Btn.Size = new System.Drawing.Size(256, 130);
-            this.Topic_Btn.TabIndex = 4;
-            this.Topic_Btn.Text = "Supprimer un topic";
-            this.Topic_Btn.UseVisualStyleBackColor = true;
-            this.Topic_Btn.Click += new System.EventHandler(this.Topic_Click);
+            this.Produits_Btn.Location = new System.Drawing.Point(270, 422);
+            this.Produits_Btn.Name = "Produits_Btn";
+            this.Produits_Btn.Size = new System.Drawing.Size(256, 130);
+            this.Produits_Btn.TabIndex = 2;
+            this.Produits_Btn.Text = "Produits";
+            this.Produits_Btn.UseVisualStyleBackColor = true;
+            this.Produits_Btn.Click += new System.EventHandler(this.Produits_Click);
             // 
             // Utilisateur_Btn
             // 
-            this.Utilisateur_Btn.Location = new System.Drawing.Point(395, 377);
+            this.Utilisateur_Btn.Location = new System.Drawing.Point(532, 422);
             this.Utilisateur_Btn.Name = "Utilisateur_Btn";
             this.Utilisateur_Btn.Size = new System.Drawing.Size(256, 130);
             this.Utilisateur_Btn.TabIndex = 5;
@@ -837,8 +706,6 @@ namespace PPE
             this.tabControl1.Controls.Add(this.Menu);
             this.tabControl1.Controls.Add(this.Categorie_Tab);
             this.tabControl1.Controls.Add(this.Produits);
-            this.tabControl1.Controls.Add(this.Evenement_Tab);
-            this.tabControl1.Controls.Add(this.Topic_Tab);
             this.tabControl1.Controls.Add(this.Utilisateur_Tab);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -846,6 +713,78 @@ namespace PPE
             this.tabControl1.Size = new System.Drawing.Size(804, 852);
             this.tabControl1.TabIndex = 8;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
+            // 
+            // label_Name_user
+            // 
+            this.label_Name_user.AutoSize = true;
+            this.label_Name_user.Location = new System.Drawing.Point(207, 597);
+            this.label_Name_user.Name = "label_Name_user";
+            this.label_Name_user.Size = new System.Drawing.Size(86, 17);
+            this.label_Name_user.TabIndex = 14;
+            this.label_Name_user.Text = "Username* :";
+            this.label_Name_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBox_Username_user
+            // 
+            this.textBox_Username_user.Location = new System.Drawing.Point(299, 594);
+            this.textBox_Username_user.Name = "textBox_Username_user";
+            this.textBox_Username_user.Size = new System.Drawing.Size(200, 22);
+            this.textBox_Username_user.TabIndex = 12;
+            this.textBox_Username_user.TextChanged += new System.EventHandler(this.enable_Button);
+            // 
+            // label_numero_user
+            // 
+            this.label_numero_user.AllowDrop = true;
+            this.label_numero_user.AutoSize = true;
+            this.label_numero_user.Location = new System.Drawing.Point(310, 637);
+            this.label_numero_user.Name = "label_numero_user";
+            this.label_numero_user.Size = new System.Drawing.Size(66, 17);
+            this.label_numero_user.TabIndex = 22;
+            this.label_numero_user.Text = "Numéro :";
+            this.label_numero_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBox_Numero_user
+            // 
+            this.textBox_Numero_user.Location = new System.Drawing.Point(382, 634);
+            this.textBox_Numero_user.Name = "textBox_Numero_user";
+            this.textBox_Numero_user.Size = new System.Drawing.Size(117, 22);
+            this.textBox_Numero_user.TabIndex = 21;
+            // 
+            // label_birthday_user
+            // 
+            this.label_birthday_user.AllowDrop = true;
+            this.label_birthday_user.AutoSize = true;
+            this.label_birthday_user.Location = new System.Drawing.Point(20, 677);
+            this.label_birthday_user.Name = "label_birthday_user";
+            this.label_birthday_user.Size = new System.Drawing.Size(95, 17);
+            this.label_birthday_user.TabIndex = 24;
+            this.label_birthday_user.Text = "Anniversaire :";
+            this.label_birthday_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label_pays_user
+            // 
+            this.label_pays_user.AllowDrop = true;
+            this.label_pays_user.AutoSize = true;
+            this.label_pays_user.Location = new System.Drawing.Point(454, 716);
+            this.label_pays_user.Name = "label_pays_user";
+            this.label_pays_user.Size = new System.Drawing.Size(47, 17);
+            this.label_pays_user.TabIndex = 33;
+            this.label_pays_user.Text = "Pays :";
+            this.label_pays_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBox_Pays_user
+            // 
+            this.textBox_Pays_user.Location = new System.Drawing.Point(507, 713);
+            this.textBox_Pays_user.Name = "textBox_Pays_user";
+            this.textBox_Pays_user.Size = new System.Drawing.Size(159, 22);
+            this.textBox_Pays_user.TabIndex = 32;
+            // 
+            // textBox_Anniv_user
+            // 
+            this.textBox_Anniv_user.Location = new System.Drawing.Point(121, 674);
+            this.textBox_Anniv_user.Name = "textBox_Anniv_user";
+            this.textBox_Anniv_user.Size = new System.Drawing.Size(159, 22);
+            this.textBox_Anniv_user.TabIndex = 23;
             // 
             // Administration
             // 
@@ -859,13 +798,12 @@ namespace PPE
             this.Utilisateur_Tab.ResumeLayout(false);
             this.Utilisateur_Tab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Users)).EndInit();
-            this.Topic_Tab.ResumeLayout(false);
             this.Produits.ResumeLayout(false);
             this.Produits.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Jeux)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Produits)).EndInit();
             this.Categorie_Tab.ResumeLayout(false);
             this.Categorie_Tab.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Jeux2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Produits2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Categorie)).EndInit();
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
@@ -879,30 +817,32 @@ namespace PPE
         private System.Windows.Forms.TabPage Utilisateur_Tab;
         private System.Windows.Forms.ComboBox comboBox_Role_user;
         private System.Windows.Forms.Label label_role_user;
-        private System.Windows.Forms.Label label_pays_user;
-        private System.Windows.Forms.TextBox textBox_Pays_user;
         private System.Windows.Forms.TextBox textBox_Adresse_user;
-        private System.Windows.Forms.TextBox textBox_Anniv_user;
-        private System.Windows.Forms.TextBox textBox_Numero_user;
         private System.Windows.Forms.TextBox textBox_Nom_user;
         private System.Windows.Forms.TextBox textBox_Prenom_user;
         private System.Windows.Forms.TextBox textBox_Email_user;
-        private System.Windows.Forms.TextBox textBox_Username_user;
         private System.Windows.Forms.TextBox textBox_ID_user;
         private System.Windows.Forms.Label label_adresse_user;
         private System.Windows.Forms.Button Edit_User;
         private System.Windows.Forms.Button Reset_User;
-        private System.Windows.Forms.Label label_birthday_user;
-        private System.Windows.Forms.Label label_numero_user;
         private System.Windows.Forms.Label label_nom_user;
         private System.Windows.Forms.Label label_prenom_user;
         private System.Windows.Forms.Label label_email_user;
-        private System.Windows.Forms.Label label_Name_user;
         private System.Windows.Forms.Label label_id_user;
         private System.Windows.Forms.DataGridView dataGridView_Users;
-        private System.Windows.Forms.TabPage Topic_Tab;
-        private System.Windows.Forms.TabPage Evenement_Tab;
         private System.Windows.Forms.TabPage Produits;
+        private System.Windows.Forms.CheckedListBox checkedListBoxType;
+        private System.Windows.Forms.CheckedListBox checkedListBoxMarque;
+        private System.Windows.Forms.Label labelPrix;
+        private System.Windows.Forms.TextBox textBoxPrix;
+        private System.Windows.Forms.TextBox textBoxQuantite;
+        private System.Windows.Forms.TextBox textBoxImage;
+        private System.Windows.Forms.TextBox textBoxDescription;
+        private System.Windows.Forms.TextBox textBoxNom;
+        private System.Windows.Forms.TextBox textBoxID;
+        private System.Windows.Forms.Label labelType;
+        private System.Windows.Forms.Label labelQuantite;
+        private System.Windows.Forms.Button Comment_Jeu;
         private System.Windows.Forms.CheckedListBox listBoxAllCategories;
         private System.Windows.Forms.Label labelCategories;
         private System.Windows.Forms.Label labelImage;
@@ -910,18 +850,14 @@ namespace PPE
         private System.Windows.Forms.Label labelDescription;
         private System.Windows.Forms.Label labelNom;
         private System.Windows.Forms.Label labelID;
-        private System.Windows.Forms.TextBox textBoxImage;
-        private System.Windows.Forms.TextBox textBoxDescription;
-        private System.Windows.Forms.TextBox textBoxNom;
-        private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.Button DelProduit;
         private System.Windows.Forms.Button EditProduit;
         private System.Windows.Forms.Button AddProduit;
-        private System.Windows.Forms.DataGridView dataGridView_Jeux;
+        private System.Windows.Forms.DataGridView dataGridView_Produits;
         private System.Windows.Forms.TabPage Categorie_Tab;
         private System.Windows.Forms.Label label_id_categorie;
-        private System.Windows.Forms.DataGridView dataGridView_Jeux2;
-        private System.Windows.Forms.Label label_jeux_de_la_cat;
+        private System.Windows.Forms.DataGridView dataGridView_Produits2;
+        private System.Windows.Forms.Label label_Produits_de_la_cat;
         private System.Windows.Forms.Label label_nom_categorie;
         private System.Windows.Forms.TextBox textBox_Name_categorie;
         private System.Windows.Forms.TextBox textBox_ID_categorie;
@@ -932,20 +868,17 @@ namespace PPE
         private System.Windows.Forms.TabPage Menu;
         private System.Windows.Forms.Button Categorie_Btn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Jeux_Btn;
-        private System.Windows.Forms.Button Evenement_Btn;
-        private System.Windows.Forms.Button Topic_Btn;
+        private System.Windows.Forms.Button Produits_Btn;
         private System.Windows.Forms.Button Utilisateur_Btn;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.Button Comment_Topic;
-        private System.Windows.Forms.Button Comment_Jeu;
-        private System.Windows.Forms.Label labelPrix;
-        private System.Windows.Forms.TextBox textBoxPrix;
-        private System.Windows.Forms.Label labelType;
-        private System.Windows.Forms.Label labelQuantite;
-        private System.Windows.Forms.TextBox textBoxQuantite;
-        private System.Windows.Forms.CheckedListBox checkedListBoxType;
-        private System.Windows.Forms.CheckedListBox checkedListBoxMarque;
+        private System.Windows.Forms.Label label_pays_user;
+        private System.Windows.Forms.TextBox textBox_Pays_user;
+        private System.Windows.Forms.TextBox textBox_Anniv_user;
+        private System.Windows.Forms.TextBox textBox_Numero_user;
+        private System.Windows.Forms.TextBox textBox_Username_user;
+        private System.Windows.Forms.Label label_birthday_user;
+        private System.Windows.Forms.Label label_numero_user;
+        private System.Windows.Forms.Label label_Name_user;
     }
 }
 

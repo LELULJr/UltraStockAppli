@@ -42,20 +42,13 @@ namespace PPE
             
         }
 
-        private void Jeux_Click(object sender, EventArgs e)
+        private void Produits_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab("Produits");
         }
 
-        private void Evenement_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectTab("Evenement_Tab");
-        }
 
-        private void Topic_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectTab("Topic_Tab");
-        }
+
 
         private void User_Click(object sender, EventArgs e)
         {
@@ -67,7 +60,7 @@ namespace PPE
             if (e.TabPageIndex == 1)
                 Open_Tab_Categories();
             else if (e.TabPageIndex == 2)
-                Open_Tab_Jeux();
+                Open_Tab_Produits();
             /*else if (e.TabPageIndex == 3)
                 Open_Tab_Events();
             else if (e.TabPageIndex == 4)
@@ -99,7 +92,7 @@ namespace PPE
                 Del_Categorie.Enabled = false;
             }
 
-            //Jeux TAB
+            //Produits TAB
             if (textBoxID.TextLength != 0)
             {
                 AddProduit.Enabled = false;
@@ -151,7 +144,7 @@ namespace PPE
             MySqlDataAdapter mydtadp_cat = new MySqlDataAdapter(); // créé un objet pour remplir    
             DataTable table_cat = new DataTable(); // créé un objet de table de données
 
-            cmd.CommandText = "SELECT * FROM categories";
+            cmd.CommandText = "SELECT * FROM categorie";
 
             mydtadp_cat.SelectCommand = cmd;
             mydtadp_cat.Fill(table_cat); // rempli cette table par les données récupéré par la commande SQL
@@ -163,7 +156,7 @@ namespace PPE
         {
 
             dataGridView_Categorie.DataSource = display_Categorie_Table(); // lancement de la fonction pour charger la table SQL "categorie" dans le tableau indiqué
-            dataGridView_Jeux2.DataSource = display_Jeu_Table(); // lancement de la fonction pour charger la table SQL "jeu" dans le tableau indiqué
+            dataGridView_Produits2.DataSource = display_Produits_Table(); // lancement de la fonction pour charger la table SQL "jeu" dans le tableau indiqué
 
             conn.Close();
 
@@ -191,32 +184,34 @@ namespace PPE
             }
         }
 
-        private void display_Jeu_from_Categorie(object sender, EventArgs e)
+        private void display_Produits_from_Categorie(object sender, EventArgs e)
         {
             enable_Button(sender, e);
 
             MySqlCommand cmd = conn.CreateCommand();
-            MySqlDataAdapter mydtadp_jeu = new MySqlDataAdapter();
-            DataTable table_jeu = new DataTable();
+            MySqlDataAdapter mydtadp_produits = new MySqlDataAdapter();
+            DataTable table_Produit = new DataTable();
 
             if (textBox_Name_categorie.Text == "")
             {
-                cmd.CommandText = "SELECT * FROM jeux";
+                cmd.CommandText = "SELECT * FROM produits";
             }
             else
             {
-                cmd.Parameters.AddWithValue("@name", textBox_Name_categorie.Text);
+                cmd.Parameters.AddWithValue("@nom", textBox_Name_categorie.Text);
 
-                cmd.CommandText = "SELECT jeux.id, jeux.name, jeux.description, jeux.site, jeux.images FROM jeux " +
-                    "INNER JOIN categoriser ON categoriser.id_jeux = jeux.id " +
-                    "INNER JOIN categories ON categories.id = categoriser.id_categories AND categories.name = @name";
+                cmd.CommandText = "SELECT p.id, type.nom AS type, marque.nom AS marque, p.nom, p.description, p.prix, p.quantite, p.image FROM produits p " +
+                    "INNER JOIN categoriser ON categoriser.id_produit = p.id " +
+                    "INNER JOIN type ON p.id_type = type.id " +
+                    "INNER JOIN marque ON p.id_marque = marque.id " +
+                    "INNER JOIN categorie ON categorie.id = categoriser.id_cat AND categorie.nom = @nom";
             }
-            mydtadp_jeu.SelectCommand = cmd;
+            mydtadp_produits.SelectCommand = cmd;
             
-            dataGridView_Jeux2.DataSource = null;
-            mydtadp_jeu.Fill(table_jeu);
+            dataGridView_Produits2.DataSource = null;
+            mydtadp_produits.Fill(table_Produit);
 
-            dataGridView_Jeux2.DataSource = table_jeu;
+            dataGridView_Produits2.DataSource = table_Produit;
         }
 
         private void Add_Categorie_Click(object sender, EventArgs e)
@@ -224,9 +219,9 @@ namespace PPE
             conn.Open();
 
             MySqlCommand command = conn.CreateCommand();
-            command.Parameters.AddWithValue("@name", textBox_Name_categorie.Text);
+            command.Parameters.AddWithValue("@nom", textBox_Name_categorie.Text);
 
-            command.CommandText = "INSERT INTO categories (name) VALUES (@name)";
+            command.CommandText = "INSERT INTO categorie (nom) VALUES (@nom)";
 
             if (command.ExecuteNonQuery() > 0)
             {
@@ -248,10 +243,10 @@ namespace PPE
             conn.Open();
 
             MySqlCommand command = conn.CreateCommand();
-            command.Parameters.AddWithValue("@name", textBox_Name_categorie.Text);
+            command.Parameters.AddWithValue("@nom", textBox_Name_categorie.Text);
             command.Parameters.AddWithValue("@id", textBox_ID_categorie.Text);
 
-            command.CommandText = "UPDATE categories SET name = @name WHERE id = @id ";
+            command.CommandText = "UPDATE categorie SET nom = @nom WHERE id = @id ";
 
             if (command.ExecuteNonQuery() > 0)
             {
@@ -274,19 +269,11 @@ namespace PPE
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@id", textBox_ID_categorie.Text);
 
-            command.CommandText = "DELETE FROM categories WHERE id = @id";
+            command.CommandText = "DELETE FROM categorie WHERE id = @id";
             command.ExecuteNonQuery();
-            command.CommandText = "DELETE FROM categoriser WHERE id_categories = @id";
+            command.CommandText = "DELETE FROM categoriser WHERE id_cat = @id";
             command.ExecuteNonQuery();
 
-            if (command.ExecuteNonQuery() > 0)
-            {
-                MessageBox.Show("Suppression effectuée!");
-            }
-            else
-            {
-                MessageBox.Show("Erreur lors de la suppression!");
-            }
 
             conn.Close();
 
@@ -294,40 +281,40 @@ namespace PPE
             conn.Close();
         }
 
-        //////////////////////// JEUX ///////////////////////////////
+        //////////////////////// PRODUITS ///////////////////////////////
 
-        public DataTable display_Jeu_Table()
+        public DataTable display_Produits_Table()
         {
             conn.Close();
             conn.Open();
 
             MySqlCommand cmd = conn.CreateCommand();
-            MySqlDataAdapter mydtadp_jeu = new MySqlDataAdapter();
-            DataTable table_jeu = new DataTable();
+            MySqlDataAdapter mydtadp_Produits = new MySqlDataAdapter();
+            DataTable table_produits = new DataTable();
 
             cmd.CommandText = "SELECT p.id, t.nom AS type, m.nom AS marque, p.nom, p.description, p.prix, p.quantite, p.image FROM produits p " +
                 "INNER JOIN type t ON t.id = p.id_type " +
                 "INNER JOIN marque m ON m.id = p.id_marque";
-            mydtadp_jeu.SelectCommand = cmd;
+            mydtadp_Produits.SelectCommand = cmd;
 
-            mydtadp_jeu.Fill(table_jeu);
+            mydtadp_Produits.Fill(table_produits);
 
-            return table_jeu;
+            return table_produits;
         }
 
-        public void Open_Tab_Jeux()
+        public void Open_Tab_Produits()
         {
-            dataGridView_Jeux.DataSource = display_Jeu_Table();
+            dataGridView_Produits.DataSource = display_Produits_Table();
 
             MySqlDataAdapter mydtadp = new MySqlDataAdapter();
-            DataTable table_jeu = new DataTable();
+            DataTable table_produit = new DataTable();
             mydtadp.SelectCommand = new MySqlCommand("SELECT * FROM categorie", conn);
-            mydtadp.Fill(table_jeu);
-            listBoxAllCategories.DataSource = table_jeu;
+            mydtadp.Fill(table_produit);
+            listBoxAllCategories.DataSource = table_produit;
             listBoxAllCategories.DisplayMember = "nom";
 
 
-            dataGridView_Jeux.DataSource = display_Jeu_Table();
+            dataGridView_Produits.DataSource = display_Produits_Table();
 
             MySqlDataAdapter mydtadp2 = new MySqlDataAdapter();
             DataTable table_marque = new DataTable();
@@ -337,7 +324,7 @@ namespace PPE
             checkedListBoxMarque.DisplayMember = "nom";
 
 
-            dataGridView_Jeux.DataSource = display_Jeu_Table();
+            dataGridView_Produits.DataSource = display_Produits_Table();
 
             MySqlDataAdapter mydtadp3 = new MySqlDataAdapter();
             DataTable table_type = new DataTable();
@@ -356,7 +343,7 @@ namespace PPE
             Comment_Jeu.Enabled = false;
         }
 
-        private void dataGridView_Jeux_MouseUp(object sendere, MouseEventArgs ee)
+        private void dataGridView_Produits_MouseUp(object sendere, MouseEventArgs ee)
         { 
             for (int i = 0; i < listBoxAllCategories.Items.Count; i++)
                 listBoxAllCategories.SetItemCheckState(i, CheckState.Unchecked);
@@ -368,12 +355,12 @@ namespace PPE
                 checkedListBoxType.SetItemCheckState(i, CheckState.Unchecked);
 
 
-            int row = dataGridView_Jeux.CurrentCell.RowIndex;
+            int row = dataGridView_Produits.CurrentCell.RowIndex;
             int id_produits = 0;
 
             for (int i = 0; i < 8; i++)
             {
-                string val = dataGridView_Jeux.Rows[row].Cells[i].Value.ToString();
+                string val = dataGridView_Produits.Rows[row].Cells[i].Value.ToString();
                 switch (i)
                 {
                     case 0:
@@ -516,7 +503,7 @@ namespace PPE
 
             conn.Close();
 
-            dataGridView_Jeux.DataSource = display_Jeu_Table();
+            dataGridView_Produits.DataSource = display_Produits_Table();
             conn.Close();
         }
 
@@ -525,6 +512,7 @@ namespace PPE
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@id_marque", checkedListBoxMarque.CheckedItems);
+            command.Parameters.AddWithValue("@id_type", checkedListBoxType.CheckedItems);
             command.Parameters.AddWithValue("@nom", textBoxNom.Text);
             command.Parameters.AddWithValue("@description", textBoxDescription.Text);
             command.Parameters.AddWithValue("@prix", textBoxPrix.Text);
@@ -575,7 +563,7 @@ namespace PPE
 
             conn.Close();
 
-            dataGridView_Jeux.DataSource = display_Jeu_Table();
+            dataGridView_Produits.DataSource = display_Produits_Table();
             conn.Close();
         }
 
@@ -608,7 +596,7 @@ namespace PPE
 
             conn.Close();
 
-            dataGridView_Jeux.DataSource = display_Jeu_Table();
+            dataGridView_Produits.DataSource = display_Produits_Table();
             conn.Close();
         }
 
@@ -751,6 +739,7 @@ namespace PPE
             Form2 Jeu_Comments = new Form2(Convert.ToInt32(textBoxID.Text), tabControl1.SelectedIndex);
             Jeu_Comments.Show();
         }
+
     }
 }
 
