@@ -58,15 +58,22 @@ namespace PPE
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
             if (e.TabPageIndex == 1)
+            {
                 Open_Tab_Categories();
+            }
             else if (e.TabPageIndex == 2)
+            {
                 Open_Tab_Produits();
-            /*else if (e.TabPageIndex == 3)
-                Open_Tab_Events();
-            else if (e.TabPageIndex == 4)
-                Open_Tab_Topics();*/
-            else if (e.TabPageIndex == 5)
+                /*else if (e.TabPageIndex == 3)
+                    Open_Tab_Events();
+                else if (e.TabPageIndex == 4)
+                }
+                    Open_Tab_Topics();*/
+            }
+            else if (e.TabPageIndex == 3)
+            {
                 Open_Tab_User();
+            }
         }
 
         private void enable_Button(object sender, EventArgs e)
@@ -127,10 +134,10 @@ namespace PPE
                 Edit_User.Enabled = false;
             }
 
-            if (textBox_Username_user.TextLength == 0 || textBox_Email_user.TextLength == 0 || comboBox_Role_user.Text == "")
-            {
-                Edit_User.Enabled = false;
-            }
+            //if (textBox_Username_user.TextLength == 0 || textBox_Email_user.TextLength == 0 || comboBox_Role_user.Text == "")
+            //{
+            //    Edit_User.Enabled = false;
+            //}
         }
 
         //////////////////////// CATEGORIES ///////////////////////////////
@@ -156,7 +163,7 @@ namespace PPE
         {
 
             dataGridView_Categorie.DataSource = display_Categorie_Table(); // lancement de la fonction pour charger la table SQL "categorie" dans le tableau indiqué
-            dataGridView_Produits2.DataSource = display_Produits_Table(); // lancement de la fonction pour charger la table SQL "jeu" dans le tableau indiqué
+            dataGridView_Produits2.DataSource = display_Produits_Table(); // lancement de la fonction pour charger la table SQL "produit" dans le tableau indiqué
 
             conn.Close();
 
@@ -611,17 +618,15 @@ namespace PPE
             MySqlDataAdapter mydtadp_user = new MySqlDataAdapter(); // créé un objet pour remplir    
             DataTable table_user = new DataTable(); // créé un objet de table de données
 
-            cmd.CommandText = "SELECT * FROM user";
+            cmd.CommandText = "SELECT * FROM utilisateurs";
 
             mydtadp_user.SelectCommand = cmd;
             mydtadp_user.Fill(table_user); // rempli cette table par les données récupéré par la commande SQL
-
             return table_user; // retourne le tableau
         }
 
         public void Open_Tab_User() // Fonction lorsque l'on rentre dans un onglet
         {
-
             dataGridView_Users.DataSource = display_User_Table(); // lancement de la fonction pour charger la table SQL "user" dans le tableau indiqué
 
             conn.Close();
@@ -634,7 +639,7 @@ namespace PPE
         {
             int row = dataGridView_Users.CurrentCell.RowIndex; // attribue a une variable la valeur de la ligne sur laquelle on a cliqué 
             
-            for (int i = 0; i < 11; i++) // boucle pour chaque cellule de la ligne
+            for (int i = 0; i < 5; i++) // boucle pour chaque cellule de la ligne
             {
                 string val = dataGridView_Users.Rows[row].Cells[i].Value.ToString(); // sauvegarde la valeur de la cellule pointé
                 switch (i)
@@ -643,31 +648,18 @@ namespace PPE
                         textBox_ID_user.Text = val;
                     break;
                     case 1:
-                        textBox_Username_user.Text = val;
-                    break;
-                    case 2:
                         textBox_Email_user.Text = val;
                     break;
-
-                    case 4:
+                    case 2:
                         textBox_Nom_user.Text = val;
                     break;
-                    case 5:
+                    case 3:
                         textBox_Prenom_user.Text = val;
                     break;
-                    case 6:
-                        textBox_Anniv_user.Text = val;
-                    break;
-                    case 7:
-                        textBox_Numero_user.Text = val;
-                    break;
-                    case 8:
+                    case 4:
                         textBox_Adresse_user.Text = val;
                     break;
-                    case 9:
-                        textBox_Pays_user.Text = val;
-                    break;
-                    case 10:
+                    case 5:
                         comboBox_Role_user.SelectedIndex = comboBox_Role_user.FindStringExact(val);
                     break;
                 }
@@ -705,14 +697,10 @@ namespace PPE
             conn.Open();
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@id", textBox_ID_user.Text);
-            command.Parameters.AddWithValue("@username", textBox_Username_user.Text);
             command.Parameters.AddWithValue("@email", textBox_Email_user.Text);
             command.Parameters.AddWithValue("@nom", textBox_Nom_user.Text);
             command.Parameters.AddWithValue("@prenom", textBox_Prenom_user.Text);
-            command.Parameters.AddWithValue("@anniv", textBox_Anniv_user.Text);
-            command.Parameters.AddWithValue("@num", textBox_Numero_user.Text);
             command.Parameters.AddWithValue("@adresse", textBox_Adresse_user.Text);
-            command.Parameters.AddWithValue("@pays", textBox_Pays_user.Text);
             command.Parameters.AddWithValue("@role", comboBox_Role_user.Text);
 
             command.CommandText = "UPDATE user SET username = @username , email = @email , nom = @nom , prenom = @prenom, birthday = @anniv, num_tel = @num, adresse = @adresse, pays = @pays, status = @role WHERE id = @id";

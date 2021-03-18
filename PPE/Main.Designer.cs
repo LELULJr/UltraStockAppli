@@ -86,14 +86,6 @@ namespace PPE
             this.Produits_Btn = new System.Windows.Forms.Button();
             this.Utilisateur_Btn = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.label_Name_user = new System.Windows.Forms.Label();
-            this.textBox_Username_user = new System.Windows.Forms.TextBox();
-            this.label_numero_user = new System.Windows.Forms.Label();
-            this.textBox_Numero_user = new System.Windows.Forms.TextBox();
-            this.label_birthday_user = new System.Windows.Forms.Label();
-            this.label_pays_user = new System.Windows.Forms.Label();
-            this.textBox_Pays_user = new System.Windows.Forms.TextBox();
-            this.textBox_Anniv_user = new System.Windows.Forms.TextBox();
             this.Utilisateur_Tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Users)).BeginInit();
             this.Produits.SuspendLayout();
@@ -109,25 +101,17 @@ namespace PPE
             // 
             this.Utilisateur_Tab.Controls.Add(this.comboBox_Role_user);
             this.Utilisateur_Tab.Controls.Add(this.label_role_user);
-            this.Utilisateur_Tab.Controls.Add(this.label_pays_user);
-            this.Utilisateur_Tab.Controls.Add(this.textBox_Pays_user);
             this.Utilisateur_Tab.Controls.Add(this.textBox_Adresse_user);
-            this.Utilisateur_Tab.Controls.Add(this.textBox_Anniv_user);
-            this.Utilisateur_Tab.Controls.Add(this.textBox_Numero_user);
             this.Utilisateur_Tab.Controls.Add(this.textBox_Nom_user);
             this.Utilisateur_Tab.Controls.Add(this.textBox_Prenom_user);
             this.Utilisateur_Tab.Controls.Add(this.textBox_Email_user);
-            this.Utilisateur_Tab.Controls.Add(this.textBox_Username_user);
             this.Utilisateur_Tab.Controls.Add(this.textBox_ID_user);
             this.Utilisateur_Tab.Controls.Add(this.label_adresse_user);
             this.Utilisateur_Tab.Controls.Add(this.Edit_User);
             this.Utilisateur_Tab.Controls.Add(this.Reset_User);
-            this.Utilisateur_Tab.Controls.Add(this.label_birthday_user);
-            this.Utilisateur_Tab.Controls.Add(this.label_numero_user);
             this.Utilisateur_Tab.Controls.Add(this.label_nom_user);
             this.Utilisateur_Tab.Controls.Add(this.label_prenom_user);
             this.Utilisateur_Tab.Controls.Add(this.label_email_user);
-            this.Utilisateur_Tab.Controls.Add(this.label_Name_user);
             this.Utilisateur_Tab.Controls.Add(this.label_id_user);
             this.Utilisateur_Tab.Controls.Add(this.dataGridView_Users);
             this.Utilisateur_Tab.Location = new System.Drawing.Point(4, 25);
@@ -146,7 +130,7 @@ namespace PPE
             "admin",
             "disable",
             "banned"});
-            this.comboBox_Role_user.Location = new System.Drawing.Point(121, 714);
+            this.comboBox_Role_user.Location = new System.Drawing.Point(212, 594);
             this.comboBox_Role_user.Name = "comboBox_Role_user";
             this.comboBox_Role_user.Size = new System.Drawing.Size(159, 24);
             this.comboBox_Role_user.TabIndex = 36;
@@ -156,7 +140,7 @@ namespace PPE
             // 
             this.label_role_user.AllowDrop = true;
             this.label_role_user.AutoSize = true;
-            this.label_role_user.Location = new System.Drawing.Point(68, 716);
+            this.label_role_user.Location = new System.Drawing.Point(159, 596);
             this.label_role_user.Name = "label_role_user";
             this.label_role_user.Size = new System.Drawing.Size(50, 17);
             this.label_role_user.TabIndex = 35;
@@ -714,78 +698,6 @@ namespace PPE
             this.tabControl1.TabIndex = 8;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
-            // label_Name_user
-            // 
-            this.label_Name_user.AutoSize = true;
-            this.label_Name_user.Location = new System.Drawing.Point(207, 597);
-            this.label_Name_user.Name = "label_Name_user";
-            this.label_Name_user.Size = new System.Drawing.Size(86, 17);
-            this.label_Name_user.TabIndex = 14;
-            this.label_Name_user.Text = "Username* :";
-            this.label_Name_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBox_Username_user
-            // 
-            this.textBox_Username_user.Location = new System.Drawing.Point(299, 594);
-            this.textBox_Username_user.Name = "textBox_Username_user";
-            this.textBox_Username_user.Size = new System.Drawing.Size(200, 22);
-            this.textBox_Username_user.TabIndex = 12;
-            this.textBox_Username_user.TextChanged += new System.EventHandler(this.enable_Button);
-            // 
-            // label_numero_user
-            // 
-            this.label_numero_user.AllowDrop = true;
-            this.label_numero_user.AutoSize = true;
-            this.label_numero_user.Location = new System.Drawing.Point(310, 637);
-            this.label_numero_user.Name = "label_numero_user";
-            this.label_numero_user.Size = new System.Drawing.Size(66, 17);
-            this.label_numero_user.TabIndex = 22;
-            this.label_numero_user.Text = "Numéro :";
-            this.label_numero_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBox_Numero_user
-            // 
-            this.textBox_Numero_user.Location = new System.Drawing.Point(382, 634);
-            this.textBox_Numero_user.Name = "textBox_Numero_user";
-            this.textBox_Numero_user.Size = new System.Drawing.Size(117, 22);
-            this.textBox_Numero_user.TabIndex = 21;
-            // 
-            // label_birthday_user
-            // 
-            this.label_birthday_user.AllowDrop = true;
-            this.label_birthday_user.AutoSize = true;
-            this.label_birthday_user.Location = new System.Drawing.Point(20, 677);
-            this.label_birthday_user.Name = "label_birthday_user";
-            this.label_birthday_user.Size = new System.Drawing.Size(95, 17);
-            this.label_birthday_user.TabIndex = 24;
-            this.label_birthday_user.Text = "Anniversaire :";
-            this.label_birthday_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label_pays_user
-            // 
-            this.label_pays_user.AllowDrop = true;
-            this.label_pays_user.AutoSize = true;
-            this.label_pays_user.Location = new System.Drawing.Point(454, 716);
-            this.label_pays_user.Name = "label_pays_user";
-            this.label_pays_user.Size = new System.Drawing.Size(47, 17);
-            this.label_pays_user.TabIndex = 33;
-            this.label_pays_user.Text = "Pays :";
-            this.label_pays_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBox_Pays_user
-            // 
-            this.textBox_Pays_user.Location = new System.Drawing.Point(507, 713);
-            this.textBox_Pays_user.Name = "textBox_Pays_user";
-            this.textBox_Pays_user.Size = new System.Drawing.Size(159, 22);
-            this.textBox_Pays_user.TabIndex = 32;
-            // 
-            // textBox_Anniv_user
-            // 
-            this.textBox_Anniv_user.Location = new System.Drawing.Point(121, 674);
-            this.textBox_Anniv_user.Name = "textBox_Anniv_user";
-            this.textBox_Anniv_user.Size = new System.Drawing.Size(159, 22);
-            this.textBox_Anniv_user.TabIndex = 23;
-            // 
             // Administration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -871,14 +783,6 @@ namespace PPE
         private System.Windows.Forms.Button Produits_Btn;
         private System.Windows.Forms.Button Utilisateur_Btn;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.Label label_pays_user;
-        private System.Windows.Forms.TextBox textBox_Pays_user;
-        private System.Windows.Forms.TextBox textBox_Anniv_user;
-        private System.Windows.Forms.TextBox textBox_Numero_user;
-        private System.Windows.Forms.TextBox textBox_Username_user;
-        private System.Windows.Forms.Label label_birthday_user;
-        private System.Windows.Forms.Label label_numero_user;
-        private System.Windows.Forms.Label label_Name_user;
     }
 }
 
