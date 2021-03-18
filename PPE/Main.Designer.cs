@@ -32,12 +32,10 @@ namespace PPE
             this.Utilisateur_Tab = new System.Windows.Forms.TabPage();
             this.comboBox_Role_user = new System.Windows.Forms.ComboBox();
             this.label_role_user = new System.Windows.Forms.Label();
-            this.textBox_Adresse_user = new System.Windows.Forms.TextBox();
             this.textBox_Nom_user = new System.Windows.Forms.TextBox();
             this.textBox_Prenom_user = new System.Windows.Forms.TextBox();
             this.textBox_Email_user = new System.Windows.Forms.TextBox();
             this.textBox_ID_user = new System.Windows.Forms.TextBox();
-            this.label_adresse_user = new System.Windows.Forms.Label();
             this.Edit_User = new System.Windows.Forms.Button();
             this.Reset_User = new System.Windows.Forms.Button();
             this.label_nom_user = new System.Windows.Forms.Label();
@@ -101,12 +99,10 @@ namespace PPE
             // 
             this.Utilisateur_Tab.Controls.Add(this.comboBox_Role_user);
             this.Utilisateur_Tab.Controls.Add(this.label_role_user);
-            this.Utilisateur_Tab.Controls.Add(this.textBox_Adresse_user);
             this.Utilisateur_Tab.Controls.Add(this.textBox_Nom_user);
             this.Utilisateur_Tab.Controls.Add(this.textBox_Prenom_user);
             this.Utilisateur_Tab.Controls.Add(this.textBox_Email_user);
             this.Utilisateur_Tab.Controls.Add(this.textBox_ID_user);
-            this.Utilisateur_Tab.Controls.Add(this.label_adresse_user);
             this.Utilisateur_Tab.Controls.Add(this.Edit_User);
             this.Utilisateur_Tab.Controls.Add(this.Reset_User);
             this.Utilisateur_Tab.Controls.Add(this.label_nom_user);
@@ -129,7 +125,7 @@ namespace PPE
             "utilisateur",
             "moderateur",
             "administrateur"});
-            this.comboBox_Role_user.Location = new System.Drawing.Point(212, 594);
+            this.comboBox_Role_user.Location = new System.Drawing.Point(332, 595);
             this.comboBox_Role_user.Name = "comboBox_Role_user";
             this.comboBox_Role_user.Size = new System.Drawing.Size(159, 24);
             this.comboBox_Role_user.TabIndex = 36;
@@ -139,19 +135,12 @@ namespace PPE
             // 
             this.label_role_user.AllowDrop = true;
             this.label_role_user.AutoSize = true;
-            this.label_role_user.Location = new System.Drawing.Point(159, 596);
+            this.label_role_user.Location = new System.Drawing.Point(279, 597);
             this.label_role_user.Name = "label_role_user";
             this.label_role_user.Size = new System.Drawing.Size(50, 17);
             this.label_role_user.TabIndex = 35;
             this.label_role_user.Text = "Rôle* :";
             this.label_role_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBox_Adresse_user
-            // 
-            this.textBox_Adresse_user.Location = new System.Drawing.Point(410, 674);
-            this.textBox_Adresse_user.Name = "textBox_Adresse_user";
-            this.textBox_Adresse_user.Size = new System.Drawing.Size(368, 22);
-            this.textBox_Adresse_user.TabIndex = 29;
             // 
             // textBox_Nom_user
             // 
@@ -182,17 +171,6 @@ namespace PPE
             this.textBox_ID_user.Size = new System.Drawing.Size(100, 22);
             this.textBox_ID_user.TabIndex = 11;
             this.textBox_ID_user.TextChanged += new System.EventHandler(this.enable_Button);
-            // 
-            // label_adresse_user
-            // 
-            this.label_adresse_user.AllowDrop = true;
-            this.label_adresse_user.AutoSize = true;
-            this.label_adresse_user.Location = new System.Drawing.Point(336, 677);
-            this.label_adresse_user.Name = "label_adresse_user";
-            this.label_adresse_user.Size = new System.Drawing.Size(68, 17);
-            this.label_adresse_user.TabIndex = 30;
-            this.label_adresse_user.Text = "Adresse :";
-            this.label_adresse_user.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Edit_User
             // 
@@ -731,12 +709,10 @@ namespace PPE
         private System.Windows.Forms.TabPage Utilisateur_Tab;
         private System.Windows.Forms.ComboBox comboBox_Role_user;
         private System.Windows.Forms.Label label_role_user;
-        private System.Windows.Forms.TextBox textBox_Adresse_user;
         private System.Windows.Forms.TextBox textBox_Nom_user;
         private System.Windows.Forms.TextBox textBox_Prenom_user;
         private System.Windows.Forms.TextBox textBox_Email_user;
         private System.Windows.Forms.TextBox textBox_ID_user;
-        private System.Windows.Forms.Label label_adresse_user;
         private System.Windows.Forms.Button Edit_User;
         private System.Windows.Forms.Button Reset_User;
         private System.Windows.Forms.Label label_nom_user;

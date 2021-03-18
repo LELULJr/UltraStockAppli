@@ -618,7 +618,7 @@ namespace PPE
             MySqlDataAdapter mydtadp_user = new MySqlDataAdapter(); // créé un objet pour remplir    
             DataTable table_user = new DataTable(); // créé un objet de table de données
 
-            cmd.CommandText = "SELECT * FROM utilisateurs";
+            cmd.CommandText = "SELECT id, nom, prenom, email, id_role FROM utilisateurs";
 
             mydtadp_user.SelectCommand = cmd;
             mydtadp_user.Fill(table_user); // rempli cette table par les données récupéré par la commande SQL
@@ -656,10 +656,10 @@ namespace PPE
                     case 3:
                         textBox_Email_user.Text = val;
                     break;
+                    //case 4:
+                    //    textBox_Adresse_user.Text = val;
+                    //break;
                     case 4:
-                        textBox_Adresse_user.Text = val;
-                    break;
-                    case 5:
                         comboBox_Role_user.SelectedIndex = comboBox_Role_user.FindStringExact(val);
                     break;
                 }
