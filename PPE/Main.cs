@@ -648,10 +648,10 @@ namespace PPE
                         textBox_ID_user.Text = val;
                     break;
                     case 1:
-                        textBox_Email_user.Text = val;
+                        textBox_Nom_user.Text = val;
                     break;
                     case 2:
-                        textBox_Nom_user.Text = val;
+                        textBox_Email_user.Text = val;
                     break;
                     case 3:
                         textBox_Prenom_user.Text = val;
@@ -675,7 +675,7 @@ namespace PPE
             MySqlCommand command = conn.CreateCommand();
             command.Parameters.AddWithValue("@id", textBox_ID_user.Text);
 
-            command.CommandText = "UPDATE user SET password = '' WHERE id = @id ";
+            command.CommandText = "UPDATE utilisateurs SET password = '' WHERE id = @id ";
 
             if (command.ExecuteNonQuery() > 0)
             {
@@ -700,10 +700,9 @@ namespace PPE
             command.Parameters.AddWithValue("@email", textBox_Email_user.Text);
             command.Parameters.AddWithValue("@nom", textBox_Nom_user.Text);
             command.Parameters.AddWithValue("@prenom", textBox_Prenom_user.Text);
-            command.Parameters.AddWithValue("@adresse", textBox_Adresse_user.Text);
             command.Parameters.AddWithValue("@role", comboBox_Role_user.Text);
 
-            command.CommandText = "UPDATE user SET username = @username , email = @email , nom = @nom , prenom = @prenom, birthday = @anniv, num_tel = @num, adresse = @adresse, pays = @pays, status = @role WHERE id = @id";
+            command.CommandText = "UPDATE utilisateurs SET email = @email , nom = @nom , prenom = @prenom, id_role = (SELECT id FROM roles WHERE nom = @role) WHERE id = @id";
 
             if (command.ExecuteNonQuery() > 0)
             {

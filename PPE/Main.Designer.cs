@@ -126,10 +126,9 @@ namespace PPE
             // 
             this.comboBox_Role_user.FormattingEnabled = true;
             this.comboBox_Role_user.Items.AddRange(new object[] {
-            "user",
-            "admin",
-            "disable",
-            "banned"});
+            "utilisateur",
+            "moderateur",
+            "administrateur"});
             this.comboBox_Role_user.Location = new System.Drawing.Point(212, 594);
             this.comboBox_Role_user.Name = "comboBox_Role_user";
             this.comboBox_Role_user.Size = new System.Drawing.Size(159, 24);
@@ -302,6 +301,7 @@ namespace PPE
             // 
             // checkedListBoxType
             // 
+            this.checkedListBoxType.CheckOnClick = true;
             this.checkedListBoxType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.checkedListBoxType.FormattingEnabled = true;
             this.checkedListBoxType.Location = new System.Drawing.Point(422, 557);
@@ -311,6 +311,7 @@ namespace PPE
             // 
             // checkedListBoxMarque
             // 
+            this.checkedListBoxMarque.CheckOnClick = true;
             this.checkedListBoxMarque.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.checkedListBoxMarque.FormattingEnabled = true;
             this.checkedListBoxMarque.Location = new System.Drawing.Point(219, 557);
@@ -408,6 +409,7 @@ namespace PPE
             // 
             // listBoxAllCategories
             // 
+            this.listBoxAllCategories.CheckOnClick = true;
             this.listBoxAllCategories.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.listBoxAllCategories.FormattingEnabled = true;
             this.listBoxAllCategories.Location = new System.Drawing.Point(16, 557);
