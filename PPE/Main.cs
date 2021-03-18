@@ -651,10 +651,10 @@ namespace PPE
                         textBox_Nom_user.Text = val;
                     break;
                     case 2:
-                        textBox_Email_user.Text = val;
+                        textBox_Prenom_user.Text = val;
                     break;
                     case 3:
-                        textBox_Prenom_user.Text = val;
+                        textBox_Email_user.Text = val;
                     break;
                     case 4:
                         textBox_Adresse_user.Text = val;
