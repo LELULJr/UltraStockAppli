@@ -16,7 +16,7 @@ namespace PPE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Administration());
+            Application.Run(new Connection());
         }
     }
 }
