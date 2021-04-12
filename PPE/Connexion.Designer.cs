@@ -41,7 +41,7 @@ namespace PPE
             // 
             this.identifiant.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.identifiant.Location = new System.Drawing.Point(203, 141);
-            this.identifiant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.identifiant.Margin = new System.Windows.Forms.Padding(2);
             this.identifiant.Name = "identifiant";
             this.identifiant.Size = new System.Drawing.Size(218, 20);
             this.identifiant.TabIndex = 0;
@@ -51,7 +51,7 @@ namespace PPE
             // 
             this.MotDePasse.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.MotDePasse.Location = new System.Drawing.Point(203, 164);
-            this.MotDePasse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MotDePasse.Margin = new System.Windows.Forms.Padding(2);
             this.MotDePasse.Name = "MotDePasse";
             this.MotDePasse.Size = new System.Drawing.Size(218, 20);
             this.MotDePasse.TabIndex = 1;
@@ -64,12 +64,13 @@ namespace PPE
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Window;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(130, 27);
+            this.label1.Location = new System.Drawing.Point(161, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(377, 26);
+            this.label1.Size = new System.Drawing.Size(299, 26);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Bienvenue sur le site de suivie UltraStock ";
+            this.label1.Text = "Application de gestion Ultrastock";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -88,7 +89,7 @@ namespace PPE
             this.Connect.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Connect.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Connect.Location = new System.Drawing.Point(258, 187);
-            this.Connect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Connect.Margin = new System.Windows.Forms.Padding(2);
             this.Connect.Name = "Connect";
             this.Connect.Size = new System.Drawing.Size(109, 21);
             this.Connect.TabIndex = 4;
@@ -111,7 +112,7 @@ namespace PPE
             this.Controls.Add(this.MotDePasse);
             this.Controls.Add(this.identifiant);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Connection";
             this.Text = "Connexion";
             this.Load += new System.EventHandler(this.Connection_Load);
