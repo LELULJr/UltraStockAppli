@@ -105,14 +105,13 @@ namespace PPE
                 AddProduit.Enabled = false;
                 EditProduit.Enabled = true;
                 DelProduit.Enabled = true;
-                Comment_Jeu.Enabled = true;
             }
             else
             {
                 AddProduit.Enabled = true;
                 EditProduit.Enabled = false;
                 DelProduit.Enabled = false;
-                Comment_Jeu.Enabled = false;
+
             }
 
             if (textBoxNom.TextLength == 0 || textBoxDescription.TextLength == 0 || textBoxImage.TextLength == 0)
@@ -347,7 +346,7 @@ namespace PPE
             AddProduit.Enabled = false;
             EditProduit.Enabled = false;
             DelProduit.Enabled = false;
-            Comment_Jeu.Enabled = false;
+
         }
 
         private void dataGridView_Produits_MouseUp(object sendere, MouseEventArgs ee)
