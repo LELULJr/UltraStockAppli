@@ -15,7 +15,7 @@ namespace PPE
     public partial class Administration : Form
     {
 
-        private static MySqlConnection conn = new MySqlConnection("database=tp_gestion_stock; server=localhost; port=3306; user id=root; pwd=" );
+        private static MySqlConnection conn = new MySqlConnection("database=ultra_stock; server=localhost; port=3306; user id=root; pwd=" );
 
         public Administration()
         {

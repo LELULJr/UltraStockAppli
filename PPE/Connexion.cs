@@ -24,7 +24,7 @@ namespace PPE
 
         private void Connect_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection("database=tp_gestion_stock; server=localhost; port=3306; user id = root; pwd=");
+            MySqlConnection conn = new MySqlConnection("database=ultra_stock; server=localhost; port=3306; user id = root; pwd=");
             try
             {
                 conn.Open();
