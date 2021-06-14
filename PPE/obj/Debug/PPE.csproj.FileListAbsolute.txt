@@ -115,7 +115,6 @@ C:\Users\Théo\Documents\GitHub\UltraStockAppli\PPE\obj\Debug\PPE.csprojAssembly
 C:\Users\Théo\Documents\GitHub\UltraStockAppli\PPE\obj\Debug\PPE.exe.config
 C:\Users\Théo\Documents\GitHub\UltraStockAppli\PPE\obj\Debug\PPE.Connection.resources
 C:\Users\Théo\Documents\GitHub\UltraStockAppli\PPE\obj\Debug\PPE.Administration.resources
-C:\Users\Théo\Documents\GitHub\UltraStockAppli\PPE\obj\Debug\PPE.Form2.resources
 C:\Users\Théo\Documents\GitHub\UltraStockAppli\PPE\obj\Debug\PPE.Properties.Resources.resources
 C:\Users\Théo\Documents\GitHub\UltraStockAppli\PPE\obj\Debug\PPE.csproj.GenerateResource.cache
 C:\Users\Théo\Documents\GitHub\UltraStockAppli\PPE\obj\Debug\PPE.csproj.CoreCompileInputs.cache

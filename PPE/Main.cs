@@ -718,13 +718,7 @@ namespace PPE
             conn.Close();
         }
 
-        //////////////////////////// COMMENTAIRES ////////////////////////////////////
-
-        private void Commentaires_Admin(object sender, EventArgs e)
-        {
-            Form2 Jeu_Comments = new Form2(Convert.ToInt32(textBoxID.Text), tabControl1.SelectedIndex);
-            Jeu_Comments.Show();
-        }
+     
 
     }
 }
